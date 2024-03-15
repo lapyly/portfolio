@@ -1,7 +1,6 @@
 class NewUserResponseDto {
     constructor(userInfo) {
-      this.name = userInfo.name;
-      this.lastname = userInfo.lastname;
+      this.username = userInfo.username;
       this.email = userInfo.email;
       this.created_At = userInfo.created_At;
     }

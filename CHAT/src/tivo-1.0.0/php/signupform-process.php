@@ -1,16 +1,16 @@
-<?php
+ <?php
 $errorMSG = "";
+
+if (empty($_POST["username"])) {
+    $errorMSG = "Name is required ";
+} else {
+    $name = $_POST["username"];
+}
 
 if (empty($_POST["email"])) {
     $errorMSG = "Email is required ";
 } else {
     $email = $_POST["email"];
-}
-
-if (empty($_POST["name"])) {
-    $errorMSG = "Name is required ";
-} else {
-    $name = $_POST["name"];
 }
 
 if (empty($_POST["password"])) {
@@ -19,14 +19,14 @@ if (empty($_POST["password"])) {
     $password = $_POST["password"];
 }
 
-if (empty($_POST["terms"])) {
-    $errorMSG = "Terms is required ";
-} else {
-    $terms = $_POST["terms"];
-}
+// if (empty($_POST["terms"])) {
+//     $errorMSG = "Terms is required ";
+// } else {
+//     $terms = $_POST["terms"];
+// }
 
 $EmailTo = "yourname@domain.com";
-$Subject = "New sign up from Tivo landing page";
+$Subject = "New sign up";
 
 // prepare email body text
 $Body = "";

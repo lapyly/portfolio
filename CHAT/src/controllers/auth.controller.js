@@ -5,9 +5,9 @@ const { passwordIsValidated } = require("../utils/bcrypt.util");
 const { generateJwt } = require("../utils/jwt.util");
 const router = Router();
 
-const Users = require("../../model/mongo/user.mongo");
+const Users = require("../models/users.model");
 
-router.post("/login", async (req, res) => {
+router.post("/", async (req, res) => {
     try {
       const { email, password } = req.body;
       if (!email || !password)

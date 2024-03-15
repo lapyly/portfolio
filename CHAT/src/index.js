@@ -4,7 +4,7 @@ const express = require("express");
 //Se importa la variable PORT desde el archivo de configuración app.config. Esta variable representa el puerto en el que el servidor escuchará las solicitudes entrantes.
 const { PORT } = require("./configs/app.config");
 //Se importa el enrutador (router) que contiene todas las rutas y controladores de la aplicación.
-const router = require("./controllers/router");
+const router = require("./controllers/router/index");
 
 //Creación de la aplicación Express
 const app = express();
