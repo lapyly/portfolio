@@ -5,6 +5,7 @@ const express = require("express");
 const { PORT } = require("./configs/app.config");
 //Se importa el enrutador (router) que contiene todas las rutas y controladores de la aplicación.
 const router = require("./controllers/router/index");
+const mongoConnect = require("./configs/db/mongo.config");
 
 //Creación de la aplicación Express
 const app = express();
@@ -15,9 +16,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //Este middleware se utiliza para servir archivos estáticos, como archivos CSS, imágenes o archivos JavaScript.
 app.use(express.static(`${process.cwd()}/src/public`));
+app.set("views", process.cwd() + "/src/views");
 
 //Configuración de las rutas
 router(app);
+mongoConnect()
 
 //Inicio del servidor
 app.listen(PORT, () => {
